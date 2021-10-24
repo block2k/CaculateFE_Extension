@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "name": "Calculate FE",
+    "version": "1.0",
+    "description": "Tính điểm FE cần đạt để pass môn",
+    "permissions": [
+        "storage",
+        "declarativeContent",
+        "activeTab"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://fap.fpt.edu.vn/Grade/StudentGrade.aspx?*"
+            ],
+            "js": [
+                "jQuery.js",
+                "calculate.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/block.png",
+            "32": "/images/block.png",
+            "48": "/images/block.png",
+            "128": "/images/block.png"
+        }
+    },
+    "icons": {
+        "16": "/images/block.png",
+        "32": "/images/block.png",
+        "48": "/images/block.png",
+        "128": "/images/block.png"
+    },
+    "options_page": "options.html"
+}
